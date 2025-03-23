@@ -1,7 +1,12 @@
+#Descripton : Return the length of the longest consecutive sequence of elements that can be formed.
+# A consecutive sequence is a sequence of elements in which each element is exactly 1 greater than the previous element. 
+# The elements do not have to be consecutive in the original array.
+
+
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
 
-        hashset = set(nums)
+        hashset = set(nums) #create a hashset from the input
         longest = 0
         #hashset = {2,3,4,5,10,20}
 
