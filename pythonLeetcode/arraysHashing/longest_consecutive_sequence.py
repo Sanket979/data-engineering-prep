@@ -12,14 +12,14 @@ class Solution:
 
         for n in nums:
 
-            if (n-1) not in hashset:
+            if (n-1) not in hashset: # if the number -1 doesnt exists in hashser.
                 l=1
 
-                while (n+l) in hashset:
+                while (n+l) in hashset: # check in hashste if the incr num still exists in hashser using while loop
                     l+=1
                 longest = max(longest, l) 
 
-        return longest
+        return longest 
 
 
 # Input: nums = [2,20,4,10,3,4,5]
