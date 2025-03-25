@@ -11,5 +11,5 @@ def twoSum2(nums, target):
     elif nums[l]+nums[r] > target:
       r=r-1
     else:
-      l=l1+1
+      l=l+1
       
