@@ -3,28 +3,25 @@
 
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        
 
-        freq = [[] for i in range(len(nums)+1)]
         count = {}
+        freq = [[] for i in range(len(nums)+1)]
 
         for n in nums:
-            count[n] = 1 + count.get(n,0)
-
-        #count = {1:1, 2:2, 3:3}
-
-        for n , cnt in count.items():
-            freq[cnt].append(n) #this will append the no at its right position.
+            if n in count:
+                count[n]+=1
+            else:
+                count[n]=1
         
-        #freq =  [[], [1], [2], [3], [], [], []]
-
-        res = []
-        for i in range(len(freq)-1, 0, -1): #it will stop before 0th idx
+        for n, cnt in count.items():
+            freq[cnt].append(n)
+        
+        res=[]
+        for i in range(len(freq)-1,0,-1):
             for n in freq[i]:
                 res.append(n)
                 if len(res)==k:
                     return res
-
 # Input: nums = [1,2,2,3,3,3], k = 2
 # Output: [2,3]
 
